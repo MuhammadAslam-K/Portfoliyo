@@ -17,6 +17,9 @@
 	
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	
@@ -407,31 +410,35 @@
 
 			<div class="row block-9">
 				<div class="col-md-8">
-					<form action="#" class="bg-light p-4 p-md-5 contact-form">
+					<form id="submit-form" action="" class="bg-light p-4 p-md-5 contact-form">
 						<div class="row">
 							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Your Name">
+								<div class="form-group" >
+									<input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+									<span id="name-error" class="color-danger" ></span>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Your Email">
+									<input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone No"  pattern="[0-9]{10}" required>
+									<span id="phone-error" class="color-danger" ></span>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Subject">
+									<input type="email" name="email" id="email" class="form-control" placeholder="email" required>
+									<span id="email-error" class="color-danger" ></span>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+									<textarea name="text" id="message" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
+									<span id="message-error" class="color-danger" ></span>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+									<input type="submit" value="submit" class="btn btn-primary py-3 px-5" onclick="return Validation()">
 								</div>
 							</div>
 						</div>
@@ -506,6 +513,8 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 		<script src="js/google-map.js"></script>
 		<script src="js/main.js"></script>
+		<script src="./js/contact-form.js"></script>
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
 		
 	</body>
 	</html>
