@@ -38,7 +38,6 @@ function Validation(){
   }
 }
 
-
 $("#submit-form").submit((e)=>{
 e.preventDefault()
 
@@ -56,6 +55,5 @@ $.ajax({
 
   }
 })
+
 })
-
-
